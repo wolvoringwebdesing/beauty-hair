@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friseur Elegance – Betzdorf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0c0c0c;--dark:#141414;--card:#1c1c1c;--border:rgba(255,255,255,0.08);--gold:#b8945a;--gold2:#d4aa70;--white:#f5f0ea;--muted:rgba(245,240,234,0.5)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(12,12,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white)}
+.logo span{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--black);padding:9px 22px;border-radius:4px;text-decoration:none;font-size:.875rem;font-weight:500}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 5% 80px;position:relative}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.0;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:var(--muted);line-height:1.7;max-width:420px;margin-bottom:20px}
+.hero-address{color:rgba(245,240,234,0.35);font-size:.85rem;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;border-radius:4px;text-decoration:none;font-weight:500;font-size:.95rem}
+.btn-secondary{border:1px solid var(--border);color:var(--white);padding:14px 32px;border-radius:4px;text-decoration:none;font-size:.95rem}
+.hero-rating{position:absolute;bottom:60px;right:5%;text-align:right}
+.stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.rating-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1}
+.rating-label{color:var(--muted);font-size:.8rem}
+section{padding:80px 5%}
+.section-tag{font-size:.72rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:16px}
+.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:48px}
+.services{background:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.service-card{background:var(--dark);padding:36px 28px}
+.service-icon{width:44px;height:44px;background:rgba(184,148,90,0.1);border:1px solid rgba(184,148,90,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.2rem}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:.88rem;line-height:1.6;margin-bottom:16px}
+.service-price{font-size:.85rem;color:var(--gold);font-weight:500}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-badge{background:var(--gold);color:var(--black);padding:28px;border-radius:4px;text-align:center;display:inline-block;margin-top:24px}
+.about-badge .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;display:block}
+.about-badge .label{font-size:.8rem;font-weight:500;display:block;margin-top:4px}
+.about-features{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.about-features li{display:flex;gap:10px;color:var(--muted);font-size:.92rem;line-height:1.5}
+.about-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+.pricing{background:var(--dark)}
+.price-table{width:100%;border-collapse:collapse}
+.price-table tr{border-bottom:1px solid var(--border)}
+.price-table tr:last-child{border-bottom:none}
+.price-table td{padding:16px 0;font-size:.95rem}
+.price-table td:last-child{text-align:right;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.3rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.review-card{background:var(--card);border:1px solid var(--border);padding:28px;border-radius:4px}
+.review-stars{color:var(--gold);font-size:.9rem;margin-bottom:14px}
+.review-text{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:18px}
+.review-author{font-size:.85rem;font-weight:500}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px solid var(--border)}
+.hours-table tr:last-child{border-bottom:none}
+.hours-table td{padding:13px 0;font-size:.9rem}
+.hours-table td:last-child{text-align:right;color:var(--muted)}
+.contact-items{display:flex;flex-direction:column;gap:18px;margin-top:8px}
+.contact-item{display:flex;align-items:flex-start;gap:12px}
+.contact-icon{width:38px;height:38px;background:rgba(184,148,90,0.08);border:1px solid rgba(184,148,90,0.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.contact-label{font-size:.75rem;color:var(--muted);margin-bottom:3px}
+.contact-val{font-size:.92rem}
+.contact-val a{color:var(--white);text-decoration:none}
+.cta-banner{background:var(--gold);color:var(--black);text-align:center;padding:70px 5%}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:12px}
+.cta-banner p{font-size:1rem;opacity:.75;margin-bottom:28px}
+.btn-dark{background:var(--black);color:var(--white);padding:14px 36px;border-radius:4px;text-decoration:none;font-weight:500;font-size:.95rem;display:inline-block}
+footer{background:var(--black);border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700}
+.footer-logo span{color:var(--gold)}
+@media(max-width:768px){.about-inner,.hours-grid{grid-template-columns:1fr;gap:40px}.hero-rating{position:static;margin-top:32px;text-align:left}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">Friseur <span>Elegance</span></div>
+<a href="tel:01785353452" class="nav-cta">📞 Anrufen</a>
+</nav>
+<section class="hero">
+<div class="hero-tag">Friseur · Betzdorf seit 2015</div>
+<h1>Ihr Stil.<br><em>Perfekt</em><br>gestylt.</h1>
+<p class="hero-sub">Professionelle Herrenschnitte, Bartpflege und Kinderhaarschnitte — im Herzen von Betzdorf.</p>
+<div class="hero-address">📍 Wilhelmstraße 49 · 57518 Betzdorf</div>
+<div class="hero-btns">
+<a href="tel:01785353452" class="btn-primary">📞 Termin vereinbaren</a>
+<a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+</div>
+<div class="hero-rating">
+<div class="stars">★★★★★</div>
+<div class="rating-num">4,5</div>
+<div class="rating-label">51 Google-Bewertungen</div>
+</div>
+</section>
+<section id="leistungen" class="services">
+<div class="section-tag">Was wir bieten</div>
+<h2 class="section-title">Unsere Leistungen</h2>
+<p class="section-sub">Von klassischen Herrenschnitten bis zur modernen Bartpflege.</p>
+<div class="services-grid">
+<div class="service-card"><div class="service-icon">✂️</div><h3>Herrenhaarschnitt</h3><p>Klassisch oder modern — waschen und stylen inklusive.</p><div class="service-price">ab 15 €</div></div>
+<div class="service-card"><div class="service-icon">🪒</div><h3>Bart & Rasur</h3><p>Professionelle Bartpflege und Konturschnitt.</p><div class="service-price">ab 10 €</div></div>
+<div class="service-card"><div class="service-icon">👦</div><h3>Kinderhaarschnitt</h3><p>Geduldig und einfühlsam für Ihre Kleinen.</p><div class="service-price">ab 10 €</div></div>
+<div class="service-card"><div class="service-icon">💈</div><h3>Komplett-Paket</h3><p>Haarschnitt + Bartpflege + Styling in einem.</p><div class="service-price">ab 25 €</div></div>
+</div>
+</section>
+<section id="ueber-uns">
+<div class="about-inner">
+<div>
+<div class="section-tag">Über uns</div>
+<h2 class="section-title">Handwerk mit Leidenschaft</h2>
+<p class="section-sub">Friseur Elegance steht für präzise Arbeit und freundliches Ambiente — mitten in Betzdorf.</p>
+<ul class="about-features">
+<li>Erfahrene Friseure mit jahrelanger Expertise</li>
+<li>Hochwertige Pflegeprodukte für Ihr Haar</li>
+<li>Entspannte Atmosphäre ohne lange Wartezeiten</li>
+<li>Faire Preise für Top-Qualität</li>
+<li>Auch ohne Termin willkommen</li>
+</ul>
+</div>
+<div style="text-align:center">
+<div style="font-size:5rem">💈</div>
+<div class="about-badge">
+<span class="num">4,5 ⭐</span>
+<span class="label">51 Google-Bewertungen</span>
+</div>
+</div>
+</div>
+</section>
+<section id="preise" class="pricing">
+<div class="section-tag">Transparente Preise</div>
+<h2 class="section-title">Preisliste</h2>
+<table class="price-table">
+<tr><td>Herrenhaarschnitt</td><td>15 €</td></tr>
+<tr><td>Herrenhaarschnitt + Bart</td><td>25 €</td></tr>
+<tr><td>Bartpflege / Konturschnitt</td><td>10 €</td></tr>
+<tr><td>Rasur (heißes Handtuch)</td><td>15 €</td></tr>
+<tr><td>Kinderhaarschnitt</td><td>10 €</td></tr>
+</table>
+</section>
+<section style="background:var(--dark)">
+<div class="section-tag">Kundenstimmen</div>
+<h2 class="section-title">Was unsere Kunden sagen</h2>
+<p class="section-sub">4,5 Sterne bei Google — über 51 zufriedene Kunden.</p>
+<div class="reviews-grid">
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">„Bester Friseur in Betzdorf! Schnell, sauber und sehr gute Beratung. Komme seit 2 Jahren hierher."</p><div class="review-author">— Markus R.</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">„Super freundliches Team, faire Preise und immer ein tolles Ergebnis. Meine Kinder gehen auch sehr gerne hin!"</p><div class="review-author">— Thomas K.</div></div>
+<div class="review-card"><div class="review-stars">★★★★☆</div><p class="review-text">„Sehr professionell und angenehmes Ambiente. Der Bartschnitt war perfekt — genau wie ich es wollte."</p><div class="review-author">— Ali M.</div></div>
+</div>
+</section>
+<section id="kontakt">
+<div class="hours-grid">
+<div>
+<div class="section-tag">Öffnungszeiten</div>
+<h2 class="section-title">Wann wir da sind</h2>
+<table class="hours-table">
+<tr><td>Montag – Freitag</td><td>09:00 – 19:00</td></tr>
+<tr><td>Samstag</td><td>09:00 – 17:00</td></tr>
+<tr><td>Sonntag</td><td>Geschlossen</td></tr>
+</table>
+</div>
+<div>
+<div class="section-tag">Kontakt & Anfahrt</div>
+<h2 class="section-title">So erreichen Sie uns</h2>
+<div class="contact-items">
+<div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Adresse</div><div class="contact-val">Wilhelmstraße 49<br>57518 Betzdorf</div></div></div>
+<div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Telefon</div><div class="contact-val"><a href="tel:01785353452">0178 5353452</a></div></div></div>
+<div class="contact-item"><div class="contact-icon">⭐</div><div><div class="contact-label">Google</div><div class="contact-val">4,5 / 5 · 51 Bewertungen</div></div></div>
+<div class="contact-item"><div class="contact-icon">🗺️</div><div><div class="contact-label">Route</div><div class="contact-val"><a href="https://maps.google.com/?q=Wilhelmstraße+49,+57518+Betzdorf" target="_blank" style="color:var(--gold)">Google Maps öffnen →</a></div></div></div>
+</div>
+</div>
+</div>
+</section>
+<div class="cta-banner">
+<h2>Bereit für Ihren neuen Look?</h2>
+<p>Rufen Sie uns an oder kommen Sie einfach vorbei.</p>
+<a href="tel:01785353452" class="btn-dark">📞 0178 5353452 anrufen</a>
+</div>
+<footer>
+<div class="footer-logo">Friseur <span>Elegance</span></div>
+<div style="color:var(--muted);font-size:.82rem">© 2026 · Wilhelmstraße 49, 57518 Betzdorf</div>
+<div style="color:rgba(245,240,234,0.2);font-size:.75rem">Demo von Waldi Webdesign</div>
+</footer>
+</body>
+</html>
