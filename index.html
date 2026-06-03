@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friseur Elegance – Betzdorf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0c0c0c;--dark:#141414;--card:#1c1c1c;--border:rgba(255,255,255,0.08);--gold:#b8945a;--gold2:#d4aa70;--white:#f5f0ea;--muted:rgba(245,240,234,0.5)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(12,12,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white)}
+.logo span{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--black);padding:9px 22px;border-radius:4px;text-decoration:none;font-size:.875rem;font-weight:500}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 5% 80px;position:relative;overflow:hidden}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.0;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:var(--muted);line-height:1.7;max-width:420px;margin-bottom:20px}
+.hero-address{display:flex;align-items:center;gap:8px;color:rgba(245,240,234,0.35);font-size:.85rem;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;border-radius:4px;text-decoration:none;font-weight:500;font-size:.95rem;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary{border:1px solid var(--border);color:var(--white);padding:14px 32px;border-radius:4px;text-decoration:none;font-size:.95rem}
+.hero-rating{position:absolute;bottom:60px;right:5%;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.rating-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1}
+.rating-label{color:var(--muted);font-size:.8rem}
+section{padding:100px 5%}
+.section-tag{font-size:.72rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:16px}
+.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:480px;margin-bottom:56px}
+.services{background:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.service-card{background:var(--dark);padding:40px 32px}
+.service-icon{width:44px;height:44px;background:rgba(184,148,90,0.1);border:1px solid rgba(184,148,90,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.2rem}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:20px}
+.service-price{font-size:.85rem;color:var(--gold);font-weight:500}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">Friseur <span>Elegance</span></div>
+<a href="tel:01785353452" class="nav-cta">📞 Anrufen</a>
+</nav>
+<section class="hero">
+<div class="hero-tag">Friseur Betzdorf</div>
+<h1>Ihr Stil.<br><em>Perfekt</em><br>gestylt.</h1>
+<p class="hero-sub">Professionelle Herrenschnitte, Bartpflege und Kinderhaarschnitte — in entspannter Atmosphäre im Herzen von Betzdorf.</p>
+<div class="hero-address">📍 Wilhelmstraße 49 · 57518 Betzdorf</div>
+<div class="hero-btns">
+<a href="tel:01785353452" class="btn-primary">📞 Termin vereinbaren</a>
+<a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+</div>
+<div class="hero-rating">
+<div class="stars">★★★★★</div>
+<div class="rating-num">4,5</div>
+<div class="rating-label">51 Google-Bewertungen</div>
+</div>
+</section>
+<section id="leistungen" class="services">
+<div class="section-tag">Was wir bieten</div>
+<h2 class="section-title">Unsere Leistungen</h2>
+<p class="section-sub">Von klassischen Herrenschnitten bis zur modernen Bartpflege.</p>
+<div class="services-grid">
+<div class="service-card"><div class="service-icon">✂️</div><h3>Herrenhaarschnitt</h3><p>Klassisch oder modern — waschen und stylen inklusive.</p><div class="service-price">ab 15 €</div></div>
+<div class="service-card"><div class="service-icon">🪒</div><h3>Bart & Rasur</h3><p>Professionelle Bartpflege und Konturschnitt.</p><div class="service-price">ab 10 €</div></div>
+<div class="service-card"><div class="service-icon">👦</div><h3>Kinderhaarschnitt</h3><p>Geduldig und einfühlsam für Ihre Kleinen.</p><div class="service-price">ab 10 €</div></div>
+<div class="service-card"><div class="service-icon">💈</div><h3>Komplett-Paket</h3><p>Haarschnitt + Bartpflege + Styling in einer Behandlung.</p><div class="service-price">ab 25 €</div></div>
+</div>
+</section>
+<section id="preise" style="background:var(--dark)">
+<div class="section-tag">Transparente Preise</div>
+<h2 class="section-title">Preisliste</h2>
+<table style="width:100%;border-collapse:collapse">
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 0">Herrenhaarschnitt</td><td style="text-align:right;color:var(--gold);font-size:1.2rem;font-family:'Playfair Display',serif">15 €</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 0">Herrenhaarschnitt + Bart</td><td style="text-align:right;color:var(--gold);font-size:1.2rem;font-family:'Playfair Display',serif">25 €</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 0">Bartpflege</td><td style="text-align:right;color:var(--gold);font-size:1.2rem;font-family:'Playfair Display',serif">10 €</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:14px 0">Rasur (heißes Handtuch)</td><td style="text-align:right;color:var(--gold);font-size:1.2rem;font-family:'Playfair Display',serif">15 €</td></tr>
+<tr><td style="padding:14px 0">Kinderhaarschnitt</td><td style="text-align:right;color:var(--gold);font-size:1.2rem;font-family:'Playfair Display',serif">10 €</td></tr>
+</table>
+</section>
+<section id="kontakt">
+<div class="section-tag">Kontakt & Öffnungszeiten</div>
+<h2 class="section-title">So erreichen Sie uns</h2>
+<p style="color:var(--muted);margin-bottom:8px">📍 Wilhelmstraße 49, 57518 Betzdorf</p>
+<p style="color:var(--muted);margin-bottom:8px">📞 <a href="tel:01785353452" style="color:var(--white)">0178 5353452</a></p>
+<p style="color:var(--muted);margin-bottom:8px">⭐ 4,5 / 5 · 51 Google-Bewertungen</p>
+<p style="color:var(--muted);margin-bottom:32px">🕘 Mo–Fr 09:00–19:00 · Sa 09:00–17:00 · So geschlossen</p>
+<a href="tel:01785353452" style="background:var(--gold);color:var(--black);padding:14px 32px;border-radius:4px;text-decoration:none;font-weight:500">📞 Jetzt anrufen</a>
+</section>
+<footer style="background:var(--black);border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px">
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem">Friseur <span style="color:var(--gold)">Elegance</span></div>
+<div style="color:var(--muted);font-size:.82rem">© 2026 · Wilhelmstraße 49, 57518 Betzdorf</div>
+<div style="color:rgba(245,240,234,0.2);font-size:.75rem">Demo von Waldi Webdesign</div>
+</footer>
+</body>
+</html>
